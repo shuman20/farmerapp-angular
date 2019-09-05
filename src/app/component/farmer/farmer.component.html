@@ -1,0 +1,25 @@
+<a [routerLink]="'/app'">Home</a>
+<h2> Farmer List </h2>
+<p>
+  <i> select farmer</i>
+</p>
+<ul>
+  <li *ngFor="let farmer of farmersList">
+    <div>  {{farmer.farmerName}}</div>
+  </li>
+</ul>
+<form (ngSubmit)="create()">
+  <p>
+    <label> Name:</label>
+    <input type="text" name="name" [(ngModel)]="farmer.farmerName" required>
+  </p>
+  <p>
+    <label>Address: </label>
+    <input type="text" name="address" [(ngModel)]="farmer.farmerAddress" required>
+  </p>
+  <p>
+    <button>submit</button>
+  </p>
+</form>
+<router-outlet></router-outlet>
+
